@@ -10,7 +10,7 @@ class Db extends mysqli {
     private $dbHost = "localhost";
      
  
-    // private constructor
+    // public constructor
     public function __construct() {
         parent::__construct($this->dbHost, $this->user, $this->pass, $this->dbName);
         if (mysqli_connect_error()) {
