@@ -7,8 +7,8 @@ include('./services/TopicService.php');
 
     $name=$_POST['name'];
     $status="active";
-    // $author=$_POST['author'];
-    $author=$_SESSION['username'];
+    $author=$_POST['author'];
+    // $author=$_SESSION['username'];
     $date=date("Y-m-d");
     $topic=new Topic();
     $topic->setName($name);

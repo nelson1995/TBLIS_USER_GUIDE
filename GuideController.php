@@ -9,8 +9,8 @@
         $status="active";
         $body=$_POST['body'];
         $subject=$_POST['subject'];
-        // $author=$_POST['author'];
-        $author=$_SESSION['username'];
+        $author=$_POST['author'];
+        // $author=$_SESSION['username'];
         $date=date("Y-m-d");
         $topic_name=$_POST['topics'];
         

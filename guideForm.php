@@ -124,9 +124,9 @@
     <input type="text" value="<?php echo isset($_GET['subject']) ? $_GET['subject']: "" ;?>" name="subject" placeholder="subject" class="form-control input-md">    
     
 
-    <!-- <label for="author">Author</label>
+    <label for="author">Author</label>
         <input type="text" value="<?php echo isset($_GET['author']) ? $_GET['author']: "" ;?>" name="author" placeholder="author" class="form-control input-md"><br/> 
- -->
+
     <label for="body">Body</label>
     <textarea id="body" name="body" placeholder="body" class="form-control" >
 

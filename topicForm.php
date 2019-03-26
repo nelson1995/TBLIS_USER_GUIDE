@@ -58,8 +58,8 @@
 <br/>
     <input type="text" value="<?php echo isset($_GET['name']) ? $_GET['name']: "" ;?>" name="name" placeholder="name" class="form-control input-sm">
     <br/>
-    <!-- <input type="text" value="<?php echo isset($_GET['author']) ? $_GET['author']: "" ;?>" name="author" placeholder="author" class="form-control input-sm">
-     --><br/>
+    <input type="text" value="<?php echo isset($_GET['author']) ? $_GET['author']: "" ;?>" name="author" placeholder="author" class="form-control input-sm">
+    <br/>
     <!-- <input type="submit" value="Submit" name="submit">  -->
 <table>
 </table>
