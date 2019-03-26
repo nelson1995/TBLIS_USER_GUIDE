@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2018 at 09:22 AM
+-- Generation Time: Jan 17, 2019 at 09:50 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -43,7 +43,7 @@ CREATE TABLE `guide` (
 --
 
 INSERT INTO `guide` (`id`, `topic_id`, `subject`, `body`, `status`, `author`, `date_created`) VALUES
-(2, 20, 'introduction', 'An information system', 'Active', 'nelson', '2018-11-28'),
+(2, 20, 'introduction222', '<!DOCTYPE html>\r\n<html>\r\n<head>\r\n</head>\r\n<body>\r\n<p><span style=\"background-color: #339966;\">An information system vvvvvvvvvvvvvvvvvvvvv</span></p>\r\n<p>&nbsp;</p>\r\n<p>gggggggggggggggggggg</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</body>\r\n</html>', 'Active', 'nelson', '2019-01-11'),
 (20, 22, 'chapter 10', 'Some content here', 'Active', 'nelson', '0000-00-00'),
 (21, 20, 'chapter11', 'Add content here !', 'Active', 'Wes', '2018-12-06'),
 (23, 20, 'chapter12', 'content', 'Active', 'Peterson', '2018-12-06'),

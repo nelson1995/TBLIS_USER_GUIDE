@@ -67,5 +67,15 @@
             return $listById;
              
         }
+        // function getContents(){
+        //     $list=$this->query("SELECT DISTINCT t.id AS id , t.name AS name,g.subject AS subject FROM topic AS t INNER JOIN guide AS g ");
+        //     return $list;
+        // }
+         function getTopicLists(){
+            
+            $topics=$this->query("SELECT id,name FROM topic");
+            return $topics;    
+                       
+        }
     }
 ?>

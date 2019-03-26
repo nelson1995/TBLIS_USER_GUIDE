@@ -61,7 +61,6 @@
             }        
 
             $response=$this->query("UPDATE guide SET topic_id='".$topic_id."' ,subject = '" . $subject . "',body = '" . $body . "',status = '" . $status . "', author ='". $author . "', date_created ='". $dateCreated ."'  WHERE guide.id = '". $id."'");
-            // $response=$this->query("UPDATE topic SET  name='". $name ."' ,status = '" . $status . "', author ='". $author . "', date_created ='". $dateCreated ."'  WHERE id = '". $id."'");
             return "Record updated !";
         }
         
@@ -77,15 +76,15 @@
             return $topic_list;
         }
 
+        function getContents(){
+            $topic_list=$this->query("SELECT t.name AS topic_name ,g.subject,g.body,g.author,g.date_created FROM guide AS g INNER JOIN topic AS t ON g.topic_id=t.id");
+            
+
+        }
+
         function getById($id){
             $list_by_id=$this->query("SELECT * FROM guide WHERE id=".$id);
             return $list_by_id;
         }
-
-        // function getList($topic_id){
-            
-            
-        // }
-
     }
 ?>

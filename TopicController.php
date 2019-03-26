@@ -8,6 +8,7 @@ include('./services/TopicService.php');
     $name=$_POST['name'];
     $status="active";
     $author=$_POST['author'];
+    // $author=$_SESSION['username'];
     $date=date("Y-m-d");
     $topic=new Topic();
     $topic->setName($name);
@@ -30,7 +31,7 @@ include('./services/TopicService.php');
         $_GET['response'] = $service->create($topic);
         
     }
-    header("Location: listtopics.php",true,302);
-    include("index.php");
+    header("Location: index.php",true,302);
+    include("topicForm.php");
     exit(); 
 ?>
