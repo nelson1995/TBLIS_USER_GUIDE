@@ -1,81 +1,83 @@
 <?php
     include_once('./db/db.php');
 
-    class TopicService extends Db{
+    class TopicService extends Db {
 
-        public function __construct() {
+        public function __construct()
+        {
             parent::__construct();            
         }
-        function create($topic){
 
-            $name=$topic->getName();
-            $status=$topic->getStatus();
-            $author=$topic->getAuthor();
-            $date=$topic->getDateCreated();
-
-
-            //todo: check to see that there is no topic with same name in db 
-
-            if($this->checkForDuplicateName($name)>0){
+        function create($topic)
+        {
+            $name = $topic->getName();
+            $status = $topic->getStatus();
+            $author = $topic->getAuthor();
+            $date = $topic->getDateCreated();
+            // todo: check to see that there is no topic with same name in db 
+            if ($this->checkForDuplicateName($name) > 0)
+            {
                 return "Record already exists !";
             }
+            $response = $this->query("INSERT INTO topic (name,status,author,date_created) 
+                                        VALUES ('" . $name . "', 
+                                            '" . $status . "' ,
+                                            '" . $author . "',
+                                            '" . $date ."')");
 
-                $response = $this->query("INSERT INTO topic (name,status,author,date_created) 
-                VALUES ('" . $name . "', '" . $status . "' ,'" . $author . "','" . $date ."')");
-    
-                return "Record successfully entered. ";
+            return "Record successfully entered. ";
         }
 
-        function checkForDuplicateName($name){
-            
-            $query=$this->query("SELECT * FROM topic WHERE name='".$name."'");
-            $result=mysqli_num_rows($query);
+        function checkForDuplicateName($name)
+        {    
+            $query = $this->query("SELECT * FROM topic WHERE name='".$name."'");
+            $result = mysqli_num_rows($query);
             return $result;
         }
 
-        function update($topic){
-            $id=$topic->getId();
-            $name=$topic->getName();
-            $status=$topic->getStatus();
-            $author=$topic->getAuthor();
-            $dateCreated=$topic->getDateCreated();
-            
-            if(mysqli_num_rows($this->getById($id))<=0){
+        function update($topic)
+        {
+            $id = $topic->getId();
+            $name = $topic->getName();
+            $status = $topic->getStatus();
+            $author = $topic->getAuthor();
+            $date_created = $topic->getDateCreated();
+
+            if (mysqli_num_rows($this->getById($id)) <= 0)
+            {
                 return "Record doesn't exist !";
             }
-            
-            $response=$this->query("UPDATE topic SET  name='". $name ."' ,status = '" . $status . "', author ='". $author . "', date_created ='". $dateCreated ."'  WHERE id = '". $id."'");
+            $response = $this->query("UPDATE topic SET  name='". $name ."' 
+                                ,status = '" . $status . "'
+                                , author ='". $author . "'
+                                , date_created ='". $date_created ."'
+                                  WHERE id = '". $id."'");
             return "Record updated !";
         }
 
-        function archive($topic){
-            $id=$topic->getId();
-            $response=$this->query("DELETE FROM topic WHERE  id ='". $id ."'");
+        function archive($topic)
+        {
+            $id = $topic->getId();
+            $response = $this->query("DELETE FROM topic WHERE  id ='". $id ."'");
             return "Record deleted !";            
-
         }
 
-        function getList(){
-             $list=$this->query("SELECT * FROM topic");
+        function getList()
+        {
+             $list = $this->query("SELECT * FROM topic");
              return $list;
-
         }
 
-        function getById($id){
-            
-            $listById=$this->query("SELECT * FROM topic WHERE id = ".$id);
-            return $listById;
-             
+        function getById($id)
+        {    
+            $list_by_id = $this->query("SELECT * FROM topic WHERE id = ".$id);
+            return $list_by_id;    
         }
-        // function getContents(){
-        //     $list=$this->query("SELECT DISTINCT t.id AS id , t.name AS name,g.subject AS subject FROM topic AS t INNER JOIN guide AS g ");
-        //     return $list;
-        // }
-         function getTopicLists(){
-            
-            $topics=$this->query("SELECT id,name FROM topic");
-            return $topics;    
-                       
+        
+        function getTopicLists()
+        {   
+            $topics = $this->query("SELECT id,name FROM topic");
+            return $topics;                  
         }
     }
 ?>

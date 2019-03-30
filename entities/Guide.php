@@ -1,8 +1,6 @@
 <?php
 
-    // namespace entities;
-
-    class Guide{
+    class Guide {
         private $id;
         private $topic_id;
         private $subject;
@@ -11,64 +9,76 @@
         private $author;
         private $date_created;
 
-        public function __construct(){}
+        public function __construct() {}
 
-        public function setId($id){
+        public function setId($id)
+        {
             $this->id=$id;
         }
         
-        public function setTopicId($topic_id){
-            $this->topic_id=$topic_id;
+        public function setTopicId($topic_id)
+        {
+            $this->topic_id = $topic_id;
         }
 
-        public function setSubject($subject){
-            $this->subject=$subject;
-        }
-        public function setBody($body){
-            $this->body=$body;
+        public function setSubject($subject)
+        {
+            $this->subject = $subject;
         }
 
-        public function setStatus($status){
-            $this->status=$status;
+        public function setBody($body)
+        {
+            $this->body = $body;
         }
 
-        public function setAuthor($author){
-            $this->author=$author;
+        public function setStatus($status)
+        {
+            $this->status = $status;
         }
 
-        public function setDateCreated($date_created){
-            $this->date_created=$date_created;
+        public function setAuthor($author)
+        {
+            $this->author = $author;
         }
 
-        public function getId(){
+        public function setDateCreated($date_created)
+        {
+            $this->date_created = $date_created;
+        }
+
+        public function getId()
+        {
             return $this->id;
         }
 
-        public function getSubject(){
+        public function getSubject()
+        {
             return $this->subject;
         }
 
-        public function getBody(){
+        public function getBody()
+        {
             return $this->body;
         }
         
-        public function getTopicId(){
+        public function getTopicId()
+        {
             return $this->topic_id;
         }
 
-        public function getStatus(){
+        public function getStatus()
+        {
             return $this->status;
         }
 
-        public function getAuthor(){
+        public function getAuthor()
+        {
             return $this->author;
         }
 
-        public function getDateCreated(){
+        public function getDateCreated()
+        {
             return $this->date_created;
         }
-
     }
-
-
 ?>

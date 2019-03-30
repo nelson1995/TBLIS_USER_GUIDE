@@ -2,13 +2,13 @@
 <?php include("../../includes/global_content.php");?>
 <?php include("../../includes/session_start.php"); ?>
 <?php
-    if(isset($_GET['response'])){
-        
+    if(isset($_GET['response']))
+    {    
         echo($_GET['response']);
-
     }
 
-    if(isset($_GET['id'])){
+    if(isset($_GET['id']))
+    {
         //todo: get topic by id 
         include("./services/TopicService.php");
         $topicService=new TopicService();
@@ -17,7 +17,8 @@
         $topic = $topicService->getById($_GET['id']);
         
         // todo: populate the text fields with records based on the id
-        while($row = mysqli_fetch_array($topic)){
+        while($row = mysqli_fetch_array($topic))
+        {
             $_GET['name'] = $row['name'];
             $_GET['author'] = $row['author'];
         }        
