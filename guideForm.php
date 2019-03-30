@@ -1,8 +1,8 @@
 <?php include("../../includes/global_content.php");?>
 <?php include("../../includes/session_start.php"); ?>
 <?php
-    if(isset($_GET['response'])){  
-
+    if(isset($_GET['response']))
+    {  
         echo($_GET['response']);
     }
     $result = "";
@@ -11,7 +11,8 @@
     $topicService=new TopicService();
     $result=$topicService->getList();
     
-    if(isset($_GET['id'])){
+    if(isset($_GET['id']))
+    {
         //get guide by id 
             
         include("./services/GuideService.php");
@@ -20,11 +21,12 @@
         $guide = $guideService->getById($_GET['id']);
         
         //  populate the text fields with records based on the id
-        while($row = mysqli_fetch_array($guide)){
+        while($row = mysqli_fetch_array($guide))
+        {
             // $_GET['name'] = $row['name'];
-            $_GET['subject'] =$row['subject'];
-            $_GET['body'] =$row['body'];
-            $_GET['status'] =$row['status'];
+            $_GET['subject'] = $row['subject'];
+            $_GET['body'] = $row['body'];
+            $_GET['status'] = $row['status'];
             $_GET['author'] = $row['author'];       
         }        
     }
@@ -113,7 +115,8 @@
     <select name="topics" class="form-control">
     <!-- <option>--Select topic--</option> -->
         <?php 
-                while($row=mysqli_fetch_array($result)){
+                while($row=mysqli_fetch_array($result))
+                {
                     $topic_name=$row["$column_name"];
                     echo("<option>$topic_name</br></option>");
                 }

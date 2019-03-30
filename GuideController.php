@@ -6,15 +6,15 @@
 ?>
 <?php
         // $name=$_POST['name'];
-        $status="active";
-        $body=$_POST['body'];
-        $subject=$_POST['subject'];
-        $author=$_POST['author'];
+        $status = "active";
+        $body = $_POST['body'];
+        $subject = $_POST['subject'];
+        $author = $_POST['author'];
         // $author=$_SESSION['username'];
-        $date=date("Y-m-d");
-        $topic_name=$_POST['topics'];
+        $date = date("Y-m-d");
+        $topic_name = $_POST['topics'];
         
-        $guide=new Guide();
+        $guide = new Guide();
         // $guide->setName($name);
         $guide->setBody($body);
         $guide->setSubject($subject);
@@ -28,16 +28,19 @@
         $service = new GuideService();
 
     
-        if(isset($_GET['id'])){
-
+        if(isset($_GET['id']))
+        {
             $guide->setId($_GET['id']);
-            $_GET['response']=$service->update($guide);
+            $_GET['response'] = $service->update($guide);
 
-        }else if(isset($_GET['delete'])){
+        }
+        else if(isset($_GET['delete']))
+        {
             $guide->setId($_GET['delete']);   
-            $_GET['response']= $service->archive($guide);
-    
-        }else{
+            $_GET['response'] = $service->archive($guide);
+        }
+        else
+        {
 
             $_GET['response'] = $service->create($guide);
         }    

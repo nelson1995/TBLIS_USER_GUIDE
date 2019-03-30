@@ -1,9 +1,9 @@
 <?php
 class Db extends mysqli {
-    //single instance of self shared among all instances
+    // single instance of self shared among all instances
     private static $instance = null;
     
-    //db connection config vars
+    // db connection config vars
     private $user = "root";
     private $pass = "";
     private $dbName = "tblis_user_guide";
