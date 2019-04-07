@@ -87,16 +87,20 @@
         function getList()
         {
             $topic_list = $this->query("SELECT g.id,t.name AS topic_name 
-                                            ,g.subject,g.body
-                                            ,g.status,g.author
-                                            ,g.date_created FROM 
-                                            guide AS g 
-                                            INNER JOIN topic AS t ON g.topic_id=t.id");
+                                                ,g.subject,g.body
+                                                ,g.status,g.author
+                                                ,g.date_created FROM 
+                                                guide AS g 
+                                                INNER JOIN topic AS t 
+                                                ON g.topic_id=t.id");
             return $topic_list;
         }
 
         function getContents($current_page_first_result,$results_per_page){
-            $topic_list = $this->query("SELECT * FROM guide LIMIT ".$current_page_first_result.','.$results_per_page);
+            $topic_list = $this->query("SELECT * 
+                                                FROM guide LIMIT "
+                                                .$current_page_first_result.
+                                                ",".$results_per_page);
             return $topic_list;
         }
         
