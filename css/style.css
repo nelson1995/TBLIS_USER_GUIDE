@@ -3,7 +3,6 @@
     File Name: style.css
     Template Name: Documentation
     Created By: Nelson G Katale
-    http://themeforest.net/user/surjithctly
 
     1. IMPORT
     2. SKELETON
@@ -391,7 +390,6 @@ header h3 a{
     border-radius: 0.2em;
     font-family: inherit;
     font-size: 17px;
-
 }
 
 header h3:hover{
@@ -400,4 +398,8 @@ header h3:hover{
 
 header h3 a:hover{
     text-decoration: none;
+}
+
+.pagination {
+    margin-left:40%;
 }

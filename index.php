@@ -98,7 +98,7 @@
 
                                     <div class="col-md-12 full">
                                        <?php echo "<p>".$row['body']."</p>";
-                                        echo "<footer><h4>".$row['date_created']."</h4></footer>"; ?>
+                                        echo '<footer><h4>'.$row['date_created'].'</h4></footer>'; ?>
                                         <hr>
                                    </div>
 
@@ -108,12 +108,16 @@
                         </div>
                     </section>                
                     <?php endwhile;?>
-                    <?php
-                        for($page = 1;$page <= $no_of_pages;$page++)
-                        {
-                            echo '<a href ="index.php?page='.$page.'">'.$page.'</a>';
-                        }
-                    ?>
+                    <ul class = "pagination">
+                        <?php
+                            echo '<li><a href ="index.php?page='.($page-1).'" class="button">Previous</a></li>';
+                            for($p = 1;$p <= $no_of_pages;$p++)
+                            {   
+                                echo '<li><a href ="index.php?page='.$p.'">'.$p.'</a></li>';
+                            }
+                            echo '<li><a href ="index.php?page='.($page+1).'" class="button">Next</a></li>';
+                        ?>
+                    </ul>
                     <!-- end section -->
                 </div>
                 <!-- // end .col -->
@@ -121,7 +125,6 @@
             <!-- // end .row -->
         </div>
         <!-- // end container -->
-
     </div>
     <!-- end wrapper -->
 <?php require_once( ROOT_PATH . '/includes/footer_section.php') ?>
