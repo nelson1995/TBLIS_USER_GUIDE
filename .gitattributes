@@ -1,2 +1,2 @@
-tblis_user_guide\css\*  linguist-vendored
-tblis_user_guide\js\*   linguist-vendored
+`tblis_user_guide\css\   linguist-language = PHP `
+`tblis_user_guide\js\    linguist-language = PHP `
