@@ -1,2 +1,2 @@
-tblis_user_guide/css/*  linguist-vendored=false
-tblis_user_guide/js/*   linguist-vendored=false
+` *.css  linguist-language = PHP `
+` *.js   linguist-language = PHP `
