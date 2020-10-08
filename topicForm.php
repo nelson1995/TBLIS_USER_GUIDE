@@ -1,4 +1,3 @@
-
 <?php include("../../includes/global_content.php");?>
 <?php include("../../includes/session_start.php"); ?>
 <?php
@@ -55,7 +54,7 @@
      <div class="form-group">
     <div class="col-xs-5">
 
-<form  action="TopicController.php<?php echo isset($_GET['id']) ? "?id=".$_GET['id'] : "" ; ?>" method="POST" id="topicForm">
+<form action="TopicController.php<?php echo isset($_GET['id']) ? "?id=".$_GET['id'] : "" ; ?>" method="POST" id="topicForm">
 <br/>
     <input type="text" value="<?php echo isset($_GET['name']) ? $_GET['name']: "" ;?>" name="name" placeholder="name" class="form-control input-sm">
     <br/>

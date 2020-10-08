@@ -1,5 +1,3 @@
-<?php include("../../includes/global_content.php");?>
-<?php include("../../includes/session_start.php"); ?>
 <?php
     if(isset($_GET['response']))
     {  
